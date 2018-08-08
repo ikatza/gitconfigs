@@ -32,6 +32,9 @@
 	old = red bold
 	new = green bold
 
+[github]
+        user = ikatza
+
 [color "grep"]
 	filename = magenta
 	linenumber = green
