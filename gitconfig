@@ -115,6 +115,9 @@
 [difftool "nbdime"]
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
 
+[filter "gitignore"]
+	smudge = cat
+
 [grep]
         lineNumber = true
         extendedRegexp = true
