@@ -1,6 +1,6 @@
 [user]
-	name = NAME
-	email = EMAIL
+	name = NAME                     #gitignore
+	email = EMAIL                   #gitignore
 
 [alias]
 	# a = add --all
