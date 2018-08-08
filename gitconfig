@@ -1,57 +1,73 @@
-[diff]
-	tool = meld
-[difftool]
-	prompt = false
-[difftool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-[merge]
-	tool = meld
-	conflictstyle = diff3
-[mergetool]
-	prompt = false
-[mergetool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
-	
 [user]
 	name = NAME
 	email = EMAIL
-[cola]
-	spellcheck = true
+
 [alias]
 	co = checkout
-[apply]
-	whitespace = nowarn
 
 [color]
-	branch = True
-	diff = True
+	branch = auto
+	diff = auto
 	status = auto
 	ui = auto
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
 [color "status"]
 	added = green
 	changed = yellow
 	untracked = cyan
+
 [core]
 	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
 	excludesfile = ~/.gitignore
 	editor = emacs -nw
+
+[diff]
+	tool = meld
+
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
+
+[difftool]
+	prompt = false
+
+[difftool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
+[merge]
+	tool = meld
+	conflictstyle = diff3
+
 [merge "jupyternotebook"]
 	driver = git-nbmergedriver merge %O %A %B %L %P
 	name = jupyter notebook merge driver
-[difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
+[mergetool]
+	prompt = false
+
+[mergetool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
 [mergetool "nbdime"]
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[cola]
+	spellcheck = true
+[apply]
+	whitespace = nowarn
+
