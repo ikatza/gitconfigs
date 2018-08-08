@@ -32,6 +32,10 @@
 	old = red bold
 	new = green bold
 
+[color "grep"]
+	filename = magenta
+	linenumber = green
+
 [color "status"]
 	added = green
 	changed = yellow
@@ -57,6 +61,10 @@
 
 [difftool "nbdime"]
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
+[grep]
+        lineNumber = true
+        extendedRegexp = true
 
 [merge]
 	tool = meld
