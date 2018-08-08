@@ -3,7 +3,57 @@
 	email = EMAIL
 
 [alias]
+	# a = add --all
+	# a-p = add --all --patch
+	# ainit = "!git init && git add --all && git commit -m 'initial commit'"
+	amend = commit --amend
+	br = branch
+	bra = branch -vv
+	ci = commit
+	ci-m = commit -m
+	# clone-svnsync = svn clone --use-svnsync-props
 	co = checkout
+	di = diff
+	# emerge = merge --edit --no-ff
+	# export = "!touch \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
+	# fa = fetch --all
+	# follow = log --oneline --follow --stat --summary --
+	# fpush = push --force-with-lease
+	# ftime = "!date +'--date=%s' -r"
+	# fetch-notes = "!git config --add remote.origin.fetch \"+refs/notes/*:refs/notes/*\" && git fetch origin"
+	# fetch-pr = "!git config --add remote.origin.fetch \"+refs/pull/*/head:refs/remotes/pr/*\" && git fetch origin"
+	# in = log --oneline --decorate ..@{upstream}
+	lg = log --oneline --decorate
+	lgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GK%C(reset) %s\"
+	logs = log --show-signature
+	# lost = "!git fsck | awk '/dangling commit/ {print $3 \"^!\"}' | xargs git log"
+	ls = ls-files
+	lsf = ls-files
+	lsr = "!_() { [ \"$1\" ] || set -- HEAD; git ls-tree -r \"$@\"; }; _"
+	mend = commit --amend --reuse-message HEAD
+	# mkobject = hash-object --stdin -w
+	# out = log --oneline --decorate @{upstream}..
+	# rbc = rebase --continue
+	# rbs = rebase -i
+	# re = rebase
+	# rec = rebase --continue
+	# refs = for-each-ref
+	# repack-to-alternate = repack -dal
+	# repack-to-local = repack -da
+	# sg = diff --cached
+	st = status
+	staged = diff --cached
+	tg = log --oneline --decorate --graph
+	tgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GS%C(reset) %s\" --graph
+	# tip = !git --no-pager log -1 --decorate --abbrev-commit --date=relative
+	uncommit = reset HEAD^
+	undo = reset --soft HEAD^
+	# unexport = "!rm -v \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
+	wdiff = diff --word-diff
+	wshow = show --word-diff
+	ic = commit
+	# tig = !tig
+
 [advice]
 	# detachedHead = false
 	# pushNonFastForward = false
