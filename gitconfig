@@ -66,6 +66,9 @@
         lineNumber = true
         extendedRegexp = true
 
+[log]
+        decorate = auto
+
 [merge]
 	tool = meld
 	conflictstyle = diff3
