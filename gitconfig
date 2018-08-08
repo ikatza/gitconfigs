@@ -5,6 +5,12 @@
 [alias]
 	co = checkout
 
+[apply]
+	whitespace = nowarn
+
+[cola]
+	spellcheck = true
+
 [color]
 	branch = auto
 	diff = auto
@@ -66,8 +72,4 @@
 [mergetool "nbdime"]
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
-[cola]
-	spellcheck = true
-[apply]
-	whitespace = nowarn
 
