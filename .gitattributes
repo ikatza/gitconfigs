@@ -1,1 +1,2 @@
-gitconf* filter=gitignore
+gitconfig filter=updateNameEmail
+

@@ -1,18 +1,20 @@
 #!/bin/bash
 #this script will setup git specifics using the configs in this repo
 
-files="gitconfig gitignore gitexcludes"
-date=`date +"%Y%m%d"`
+# Check if the name and email has been updated.
+# Exit if not.
 
 PATTERN="NAME\|EMAIL"
 FILE="gitconfig"
 if grep -q $PATTERN $FILE;
 then
-    # echo "Here are the Strings with the Pattern '$PATTERN':"
     echo "You need to update your gitconfig file"
     echo "Put your actual name and email instead of '$PATTERN'"
-    echo "Leave the #gitignore comments at the end!"
     echo -e "$(grep $PATTERN $FILE)\n"
+    echo -e "Then run:\n"
+    echo -e "\t git config filter.updateName&Email.smudge "sed -e 's/EMAIL/<ACTUAL_EMAIL>/' -e 's/NAME/<ACTUAL_NAME>/'" "
+    echo -e "\t git config filter.updateName&Email.clean "sed -e 's/<ACTUAL_EMAIL>/EMAIL/' -e 's/<ACTUAL_NAME>/NAME/'" "
+    echo -e "\nSo that they stay untracked"
     echo "Exiting..."
     exit 1
 else
@@ -20,18 +22,15 @@ else
     echo -e "Proceeding\n"
 fi
 
-IGNORE="#gitignore"
-if grep -q $IGNORE $FILE;
-then
-    echo "The ignore comments '$IGNORE' are in:"
-    echo "$(grep $IGNORE $FILE)"
-    echo -e "Proceeding\n"
-else
-    echo "Error: The Pattern '$IGNORE' was NOT Found in '$FILE'"
-    echo "Exiting..."
-    exit 1
-fi
+###### Unfortunately not working
+# read -p "Input name: " name
+# read -p "Input email: " email
+# git config filter.updateNameEmail2.smudge  "sed -e 's/EMAIL/$email/' -e 's/NAME/${name}/' "
+# exit 0
 
+
+files="gitconfig gitignore gitexcludes"
+date=`date +"%Y%m%d"`
 
 for file in $files; do
     if [ -h ~/.$file ]; then
