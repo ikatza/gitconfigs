@@ -1,6 +1,6 @@
 [user]
-	name = NAME                     #gitignore
-	email = EMAIL                   #gitignore
+       name = NAME
+       email = EMAIL
 
 [alias]
 	# a = add --all
@@ -114,9 +114,6 @@
 
 [difftool "nbdime"]
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
-
-[filter "gitignore"]
-	smudge = cat
 
 [grep]
         lineNumber = true
