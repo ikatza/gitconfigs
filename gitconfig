@@ -23,6 +23,7 @@
 	# fetch-notes = "!git config --add remote.origin.fetch \"+refs/notes/*:refs/notes/*\" && git fetch origin"
 	# fetch-pr = "!git config --add remote.origin.fetch \"+refs/pull/*/head:refs/remotes/pr/*\" && git fetch origin"
 	# in = log --oneline --decorate ..@{upstream}
+        last = log -1 HEAD
 	lg = log --oneline --decorate
 	lgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GK%C(reset) %s\"
 	logs = log --show-signature
@@ -49,6 +50,7 @@
 	uncommit = reset HEAD^
 	undo = reset --soft HEAD^
 	# unexport = "!rm -v \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
+        unstage = reset HEAD --
 	wdiff = diff --word-diff
 	wshow = show --word-diff
 	ic = commit
