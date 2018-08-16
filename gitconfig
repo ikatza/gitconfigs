@@ -9,6 +9,7 @@
 	amend = commit --amend
 	br = branch
 	bra = branch -vv
+        checkpoint = !git stash; git stash apply
 	ci = commit
 	ci-m = commit -m
 	# clone-svnsync = svn clone --use-svnsync-props
@@ -41,6 +42,7 @@
 	# refs = for-each-ref
 	# repack-to-alternate = repack -dal
 	# repack-to-local = repack -da
+        reverse = checkout -p
 	# sg = diff --cached
 	st = status
 	staged = diff --cached
