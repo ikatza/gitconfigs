@@ -13,6 +13,7 @@
 *.obj
 *.dylib
 *.dll
+*.dSYM
 
 # Compiled static libraries
 *.lai

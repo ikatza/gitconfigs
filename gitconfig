@@ -101,7 +101,7 @@
 [core]
 	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
 	excludesfile = ~/.gitignore
-	editor = emacs -nw
+	editor = emacs -nw --quick
 
 [diff]
 	tool = meld
