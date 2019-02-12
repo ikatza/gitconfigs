@@ -1,3 +1,4 @@
+# -*- mode: sh -*-
 [user]
        name = NAME
        email = EMAIL

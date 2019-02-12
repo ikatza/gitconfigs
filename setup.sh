@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #this script will setup git specifics using the configs in this repo
 
 # Check if the name and email has been updated.
