@@ -105,6 +105,7 @@
 	editor = emacs -nw --quick
 
 [diff]
+        algorithm = histogram
 	tool = meld
 
 [diff "jupyternotebook"]
