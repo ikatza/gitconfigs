@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #this script will setup git specifics using the configs in this repo
 
 # Check if the name and email has been updated.
@@ -28,6 +29,9 @@ fi
 # git config filter.updateNameEmail2.smudge  "sed -e 's/EMAIL/$email/' -e 's/NAME/${name}/' "
 # exit 0
 
+
+files="gitconfig gitignore gitexcludes"
+date=`date +"%Y%m%d"`
 
 files="gitconfig gitignore gitexcludes"
 date=`date +"%Y%m%d"`
