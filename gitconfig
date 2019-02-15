@@ -24,10 +24,10 @@
 	# ftime = "!date +'--date=%s' -r"
 	# fetch-notes = "!git config --add remote.origin.fetch \"+refs/notes/*:refs/notes/*\" && git fetch origin"
 	# fetch-pr = "!git config --add remote.origin.fetch \"+refs/pull/*/head:refs/remotes/pr/*\" && git fetch origin"
+	graph = log --graph --date-order -C -M --pretty=format:\"%C(auto,yellow)%h %C(auto,green)%ad %C(auto,Cyan)%<(17,trunc)%aN%C(auto)%d  %C(auto,reset)%s\" --all --date=short
 	# in = log --oneline --decorate ..@{upstream}
         last = log -1 HEAD
-	lg = log --oneline --decorate
-	lgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GK%C(reset) %s\"
+        lg = log --pretty=\"%C(auto,yellow)%h %C(auto,green)%ad %C(auto,Cyan)%<(17,trunc)%aN%C(auto)%d  %C(auto,reset)%s\" --date=short
 	logs = log --show-signature
 	# lost = "!git fsck | awk '/dangling commit/ {print $3 \"^!\"}' | xargs git log"
 	ls = ls-files
