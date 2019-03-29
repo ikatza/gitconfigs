@@ -34,6 +34,7 @@
 	lsf = ls-files
 	lsr = "!_() { [ \"$1\" ] || set -- HEAD; git ls-tree -r \"$@\"; }; _"
 	mend = commit --amend --reuse-message HEAD
+        mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
 	# mkobject = hash-object --stdin -w
 	# out = log --oneline --decorate @{upstream}..
 	# rbc = rebase --continue
