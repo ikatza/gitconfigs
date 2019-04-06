@@ -8,9 +8,11 @@
 	# a-p = add --all --patch
 	# ainit = "!git init && git add --all && git commit -m 'initial commit'"
 	amend = commit --amend
+	backup = tag BACKUP
+	backup-restore = reset --hard BACKUP
 	br = branch
 	bra = branch -vv
-        checkpoint = !git stash; git stash apply
+        checkpoint = "!f(){ git stash push -m \"$1\"; git stash apply; };f"
 	ci = commit
 	ci-m = commit -m
 	# clone-svnsync = svn clone --use-svnsync-props
