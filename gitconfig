@@ -114,6 +114,7 @@
 [diff]
         algorithm = histogram
 	tool = meld
+	renames = true
 
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
@@ -131,6 +132,8 @@
 [grep]
         lineNumber = true
         extendedRegexp = true
+        break = true
+        heading = true
 
 [log]
         decorate = auto
