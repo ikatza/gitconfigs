@@ -18,6 +18,8 @@
 	# clone-svnsync = svn clone --use-svnsync-props
 	co = checkout
 	di = diff
+	dii = diff --word-diff
+        dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less -+$LESS -R; }; f"
 	# emerge = merge --edit --no-ff
 	# export = "!touch \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
 	# fa = fetch --all
