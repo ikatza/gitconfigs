@@ -143,6 +143,9 @@
         break = true
         heading = true
 
+[help]
+	autocorrect = 1
+
 [log]
         decorate = auto
 
