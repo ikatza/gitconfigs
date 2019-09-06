@@ -1,140 +1,139 @@
 # -*- mode: sh -*-
 [user]
-       name = NAME
-       email = EMAIL
+        name = NAME
+        email = EMAIL
 
 [alias]
-	# a = add --all
-	# a-p = add --all --patch
-	# ainit = "!git init && git add --all && git commit -m 'initial commit'"
-	amend = commit --amend
-	backup = tag BACKUP
-	backup-restore = reset --hard BACKUP
-	br = branch
-	bra = branch -vv
+        # a = add --all
+        # a-p = add --all --patch
+        # ainit = "!git init && git add --all && git commit -m 'initial commit'"
+        amend = commit --amend
+        backup = tag BACKUP
+        backup-restore = reset --hard BACKUP
+        br = branch
+        bra = branch -vv
         checkpoint = "!f(){ git stash push -m \"$1\"; git stash apply; };f"
-	ci = commit
-	ci-m = commit -m
-	# clone-svnsync = svn clone --use-svnsync-props
-	co = checkout
-	di = diff
-	dii = diff --word-diff
+        ci = commit
+        ci-m = commit -m
+        # clone-svnsync = svn clone --use-svnsync-props
+        co = checkout
+        di = diff
+        dii = diff --word-diff
         dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less -+$LESS -R; }; f"
-	# emerge = merge --edit --no-ff
-	# export = "!touch \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
-	# fa = fetch --all
-	# follow = log --oneline --follow --stat --summary --
-	# fpush = push --force-with-lease
-	# ftime = "!date +'--date=%s' -r"
-	# fetch-notes = "!git config --add remote.origin.fetch \"+refs/notes/*:refs/notes/*\" && git fetch origin"
-	# fetch-pr = "!git config --add remote.origin.fetch \"+refs/pull/*/head:refs/remotes/pr/*\" && git fetch origin"
-	graph = log --graph --date-order -C -M --pretty=format:\"%C(auto,yellow)%h %C(auto,green)%ad %C(auto,Cyan)%<(17,trunc)%aN%C(auto)%d  %C(auto,reset)%s\" --all --date=short
-	# in = log --oneline --decorate ..@{upstream}
+        # emerge = merge --edit --no-ff
+        # export = "!touch \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
+        # fa = fetch --all
+        # follow = log --oneline --follow --stat --summary --
+        # fpush = push --force-with-lease
+        # ftime = "!date +'--date=%s' -r"
+        # fetch-notes = "!git config --add remote.origin.fetch \"+refs/notes/*:refs/notes/*\" && git fetch origin"
+        # fetch-pr = "!git config --add remote.origin.fetch \"+refs/pull/*/head:refs/remotes/pr/*\" && git fetch origin"
+        graph = log --graph --date-order -C -M --pretty=format:\"%C(auto,yellow)%h %C(auto,green)%ad %C(auto,Cyan)%<(17,trunc)%aN%C(auto)%d  %C(auto,reset)%s\" --all --date=short
+        # in = log --oneline --decorate ..@{upstream}
         last = log -1 HEAD
         lg = log --pretty=\"%C(auto,yellow)%h %C(auto,green)%ad %C(auto,Cyan)%<(17,trunc)%aN%C(auto)%d  %C(auto,reset)%s\" --date=short
-	logs = log --show-signature
-	# lost = "!git fsck | awk '/dangling commit/ {print $3 \"^!\"}' | xargs git log"
-	ls = ls-files
-	lsf = ls-files
-	lsr = "!_() { [ \"$1\" ] || set -- HEAD; git ls-tree -r \"$@\"; }; _"
-	mend = commit --amend --reuse-message HEAD
+        logs = log --show-signature
+        # lost = "!git fsck | awk '/dangling commit/ {print $3 \"^!\"}' | xargs git log"
+        ls = ls-files
+        lsr = "!_() { [ \"$1\" ] || set -- HEAD; git ls-tree -r \"$@\"; }; _"
+        mend = commit --amend --reuse-message HEAD
         mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
-	# mkobject = hash-object --stdin -w
-	# out = log --oneline --decorate @{upstream}..
-	# rbc = rebase --continue
-	# rbs = rebase -i
-	# re = rebase
-	# rec = rebase --continue
-	# refs = for-each-ref
-	# repack-to-alternate = repack -dal
-	# repack-to-local = repack -da
+        # mkobject = hash-object --stdin -w
+        # out = log --oneline --decorate @{upstream}..
+        # rbc = rebase --continue
+        # rbs = rebase -i
+        # re = rebase
+        # rec = rebase --continue
+        # refs = for-each-ref
+        # repack-to-alternate = repack -dal
+        # repack-to-local = repack -da
         reverse = checkout -p
-	# sg = diff --cached
 	st = status
-	staged = diff --cached
+        # sg = diff --cached
+        staged = diff --cached
         sh = stash
-	sl = stash list
-	sa = stash apply
-	ss = stash show -p
-	tg = log --oneline --decorate --graph
-	tgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GS%C(reset) %s\" --graph
 	# tip = !git --no-pager log -1 --decorate --abbrev-commit --date=relative
-	uncommit = reset HEAD^
-	undo = reset --soft HEAD^
-	# unexport = "!rm -v \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
+        sl = stash list
+        sa = stash apply
+        ss = stash show -p
+        tg = log --oneline --decorate --graph
+        tgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GS%C(reset) %s\" --graph
+        uncommit = reset HEAD^
+        undo = reset --soft HEAD^
+        # unexport = "!rm -v \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
         unstage = reset HEAD --
-	wdiff = diff --word-diff
-	wshow = show --word-diff
 	ic = commit
 	# tig = !tig
+        wdiff = diff --word-diff
+        wshow = show --word-diff
 
 [advice]
-	# detachedHead = false
-	# pushNonFastForward = false
-	statusHints = false
+        # detachedHead = false
+        # pushNonFastForward = false
+        statusHints = false
 
 [apply]
-	whitespace = nowarn
+        whitespace = nowarn
 
 [cola]
-	spellcheck = true
+        spellcheck = true
 
 [color]
-	branch = auto
-	diff = auto
-	status = auto
-	ui = true
+        branch = auto
+        diff = auto
+        status = auto
+        ui = true
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+        current = yellow reverse
+        local = yellow
+        remote = green
 
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	commit = yellow bold
-	whitespace = red reverse
+        meta = yellow
+        frag = magenta bold
+        old = red bold
+        new = green bold
+        commit = yellow bold
+        whitespace = red reverse
 
 [color "grep"]
-	filename = magenta
-	linenumber = green
+        filename = magenta
+        linenumber = green
 
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = cyan
+        added = green
+        changed = yellow
+        untracked = cyan
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = green bold
+        newHighlight = green bold 22
 
 [core]
 	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
-	excludesfile = ~/.gitignore
-	editor = emacs -nw --quick
+        excludesfile = ~/.gitignore
+        editor = emacs -nw --quick
 
 [diff]
         algorithm = histogram
-	tool = meld
-	renames = true
+        tool = meld
+        renames = true
 
 [diff "jupyternotebook"]
-	command = git-nbdiffdriver diff
+        command = git-nbdiffdriver diff
 
 [difftool]
-	prompt = false
+        prompt = false
 
 [difftool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+        trustExitCode = true
+        cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
 
 [difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+        cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
 
 [github]
         user = ikatza
@@ -146,33 +145,32 @@
         heading = true
 
 [help]
-	autocorrect = 1
+        autocorrect = 1
 
 [log]
         decorate = auto
 
 [merge]
-	tool = meld
-	conflictstyle = diff3
+        tool = meld
+        conflictstyle = diff3
 
 [merge "jupyternotebook"]
-	driver = git-nbmergedriver merge %O %A %B %L %P
-	name = jupyter notebook merge driver
+        driver = git-nbmergedriver merge %O %A %B %L %P
+        name = jupyter notebook merge driver
 
 [mergetool]
-	prompt = false
+        prompt = false
 
 [mergetool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+        trustExitCode = true
+        cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
 [mergetool "nbdime"]
-	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+        cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
 [push]
         default = current
 
 [rerere]
-	enabled = true
-	autoupdate = true
-
+        enabled = true
+        autoupdate = true
