@@ -81,7 +81,7 @@
 	branch = auto
 	diff = auto
 	status = auto
-	ui = auto
+	ui = true
 
 [color "branch"]
 	current = yellow reverse
@@ -89,13 +89,12 @@
 	remote = green
 
 [color "diff"]
-	meta = yellow bold
+	meta = yellow
 	frag = magenta bold
 	old = red bold
 	new = green bold
-
-[github]
-        user = ikatza
+	commit = yellow bold
+	whitespace = red reverse
 
 [color "grep"]
 	filename = magenta
@@ -105,6 +104,12 @@
 	added = green
 	changed = yellow
 	untracked = cyan
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
 [core]
 	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
@@ -128,6 +133,9 @@
 
 [difftool "nbdime"]
 	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
+[github]
+        user = ikatza
 
 [grep]
         lineNumber = true
