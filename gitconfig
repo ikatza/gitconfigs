@@ -75,6 +75,11 @@
 [apply]
         whitespace = nowarn
 
+[blame]
+        coloring = highlightRecent
+        date = short
+        # showemail = true
+
 [cola]
         spellcheck = true
 
@@ -83,6 +88,9 @@
         diff = auto
         status = auto
         ui = true
+
+[color "blame"]
+        highlightRecent = blue,12 month ago,yellow,1 month ago,magenta, 1 week ago,red
 
 [color "branch"]
         current = yellow reverse
