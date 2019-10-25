@@ -132,7 +132,7 @@
         editor = emacs -nw --quick
 
 [diff]
-        algorithm = histogram
+        algorithm = patience
         tool = meld
         renames = true
 
