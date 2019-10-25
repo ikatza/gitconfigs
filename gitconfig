@@ -48,8 +48,8 @@
         # repack-to-alternate = repack -dal
         # repack-to-local = repack -da
         reverse = checkout -p
-	st = status
         # sg = diff --cached
+        st = status --show-stash
         staged = diff --cached
         sh = stash
 	# tip = !git --no-pager log -1 --decorate --abbrev-commit --date=relative
