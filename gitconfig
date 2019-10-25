@@ -23,6 +23,7 @@
         # emerge = merge --edit --no-ff
         # export = "!touch \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
         # fa = fetch --all
+        fixup = commit --fixup   # commit id to be fixed
         # follow = log --oneline --follow --stat --summary --
         # fpush = push --force-with-lease
         # ftime = "!date +'--date=%s' -r"
@@ -40,6 +41,8 @@
         mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
         # mkobject = hash-object --stdin -w
         # out = log --oneline --decorate @{upstream}..
+        pstash = "!f(){ git stash && git tag \"$1\" stash && git stash drop; }; f"
+        pull-remote = checkout --track
         # rbc = rebase --continue
         # rbs = rebase -i
         # re = rebase
@@ -48,25 +51,27 @@
         # repack-to-alternate = repack -dal
         # repack-to-local = repack -da
         reverse = checkout -p
+	re = remote -v
         # sg = diff --cached
         st = status --show-stash
         staged = diff --cached
         sh = stash
-	# tip = !git --no-pager log -1 --decorate --abbrev-commit --date=relative
         sl = stash list
         sa = stash apply
         ss = stash show -p
         shame = blame -w -M
+        squash = rebase -i --autosquash # needs the commit id that you want to retain
         tg = log --oneline --decorate --graph
         tgs = log --format=\"%C(yellow)%h%C(reset)%C(cyan)% GS%C(reset) %s\" --graph
+        tip = !git --no-pager log -1 --decorate --abbrev-commit --date=relative
         uncommit = reset HEAD^
         undo = reset --soft HEAD^
         # unexport = "!rm -v \"$(git rev-parse --git-dir)/git-daemon-export-ok\""
         unstage = reset HEAD --
-	ic = commit
-	# tig = !tig
         wdiff = diff --word-diff
         wshow = show --word-diff
+        tig = !tig
+        grep = grep --break --heading --line-number
 
 [advice]
         # detachedHead = false
