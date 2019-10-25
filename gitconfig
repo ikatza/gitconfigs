@@ -127,7 +127,7 @@
         newHighlight = green bold 22
 
 [core]
-	whitespace = -trailing-space,-indent-with-non-tab,-tab-in-indent
+        whitespace = blank-at-eol,blank-at-eof,tab-in-indent,-space-before-tab
         excludesfile = ~/.gitignore
         editor = emacs -nw --quick
 
