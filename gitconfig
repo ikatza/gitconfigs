@@ -56,9 +56,10 @@
         st = status --show-stash
         staged = diff --cached
         sh = stash
-        sl = stash list
-        sa = stash apply
-        ss = stash show -p
+        shl = stash list
+        sha = stash apply
+        shs = stash show -p
+        shuns = stash -k -u # stash unstaged and untracked changes, useful for testing a commit
         shame = blame -w -M
         squash = rebase -i --autosquash # needs the commit id that you want to retain
         tg = log --oneline --decorate --graph
