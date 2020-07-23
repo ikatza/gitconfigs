@@ -186,6 +186,9 @@
 [push]
         default = current
 
+[pull]
+	ff = only
+
 [rerere]
         enabled = true
         autoupdate = true
