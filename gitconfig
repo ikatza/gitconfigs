@@ -133,7 +133,7 @@
         editor = emacs -nw --quick
 
 [diff]
-        algorithm = histogram
+        algorithm = minimal
         tool = meld
         renames = true
 
